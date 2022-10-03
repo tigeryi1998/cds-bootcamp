@@ -40,8 +40,8 @@ class PlacesTrainingConfig:
     lightning: Dict[str, Any] = dataclasses.field(default_factory=dict)
     precision: int = 32
     batch_size: int = 256
-    max_epochs: int = 60
-    gpus: int = 1
+    max_epochs: int = 4
+    gpus: int = 2
 
 
 class PlacesModel(pytorch_lightning.LightningModule):
