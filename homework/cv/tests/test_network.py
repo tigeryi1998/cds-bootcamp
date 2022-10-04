@@ -2,6 +2,7 @@ import pytest
 import torch
 # from zmq import device
 import bootcamp
+import bootcamp.model
 
 @pytest.mark.parametrize('device', 
 ['cpu', pytest.param('cuda', 
