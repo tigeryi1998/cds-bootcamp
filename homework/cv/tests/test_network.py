@@ -5,6 +5,8 @@ import bootcamp
 import bootcamp.model
 import torch.cpu, torch.cuda
 
+device = torch.device('cuda:0')
+
 @pytest.mark.parametrize('device', 
 ['cpu', pytest.param('cuda', 
 marks=pytest.mark.skipif(not torch.cuda.is_available(), reason='Cuda required' ))])
