@@ -3,10 +3,15 @@ import torch
 # from zmq import device
 import bootcamp
 import bootcamp.model
+import torch.cpu, torch.cuda
 
 @pytest.mark.parametrize('device', 
 ['cpu', pytest.param('cuda', 
 marks=pytest.mark.skipif(not torch.cuda.is_available(), reason='Cuda required' ))])
+
+def test_pytorch_sum_device(device):
+    x = torch.ones(10, device=device, dtype=torch.int32)
+    assert x.sum() == 10
 
 config = bootcamp.model.PlacesTrainingConfig()
 config.model.width_multiplier = 0.25
