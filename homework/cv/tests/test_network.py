@@ -26,7 +26,7 @@ dm = bootcamp.dataset.PlacesDataModule(16, '/places365', 1)
 dm.setup()
 
 batch = next( iter(dm.train_dataloader()) )
-torch.save(batch, '/testdata/batch.pt')
+torch.save(batch, 'testdata/batch.pt')
 
 batch = torch.load('testdata/batch.pt')
 batch = [ v.to(device)  for v in batch ]
