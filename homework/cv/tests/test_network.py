@@ -1,9 +1,11 @@
 import pytest
 import torch
-from zmq import device
+# from zmq import device
 import bootcamp
 
-@pytest.mark.parametrize('device', ['cpu', pytest.param('cuda', marks=pytest.mark.skipif(not torch.cuda.is_available(), reason='Cuda required' ))])
+@pytest.mark.parametrize('device', 
+['cpu', pytest.param('cuda', 
+marks=pytest.mark.skipif(not torch.cuda.is_available(), reason='Cuda required' ))])
 
 config = bootcamp.model.PlacesTrainingConfig()
 config.model.width_multiplier = 0.25
