@@ -3,6 +3,7 @@ import torch
 # from zmq import device
 import bootcamp
 import bootcamp.model
+import bootcamp.dataset
 import torch.cpu, torch.cuda
 
 device = torch.device('cuda:0')
